@@ -2,34 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Contact(models.Model):
-    phone_site = models.CharField(
-        max_length=255,
-        verbose_name='Телефон номер'
-    )
-
-    email_site = models.EmailField(
-        max_length=255,
-        verbose_name='Почта')
-
-    location_site = models.CharField(
-        max_length=255,
-        verbose_name='Адрес'
-    )
-
-    facebook_site = models.URLField(
-        verbose_name='Facebook',
-        blank=True, null=True
-    )
-
-    instagram_site = models.URLField(
-        verbose_name='Instagram',
-        blank=True, null=True
-    )
-
-    youtube_site = models.URLField(
-        verbose_name='Youtube',
-        blank=True, null=True
-    )
+    
 
     def __str__(self):
         return self.phone_site
