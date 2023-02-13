@@ -1,0 +1,52 @@
+{%load static%}
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> {{setting.name_site}} - {{setting.description_site}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- favicon -->		
+    <link rel="shortcut icon" type="image/x-icon" href="{{setting.logo_site.url}}">
+    
+    <!-- Bootstrap CSS -->		
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.min.css' %}">
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <!-- Modernizr JS -->		
+    <script src="{%static 'js/vendor/modernizr-3.11.2.min.js'%}"></script>
+</head>
+<body>
+
+    {%block content%}
+
+    {%endblock%}
+
+<script src="{%static 'js/vendor/jquery-3.6.0.min.js'%}"></script>
+<script src="{%static 'js/vendor/jquery-migrate-3.3.2.min.js'%}"></script>
+
+<!-- bootstrap JS -->		
+<script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+
+<!-- plugins JS -->		
+<script src="{%static 'js/plugins.js'%}"></script>
+
+<!-- main JS
+============================================ -->		
+<script src="{%static 'js/main.js'%}"></script>
+</body>
+</html>

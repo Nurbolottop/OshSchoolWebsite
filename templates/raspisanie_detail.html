@@ -1,0 +1,76 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>{{raspisanie.name_raspisanie}}</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-12 mb-20">
+                <!-- Single News Details -->
+               <div class="single-news-details">
+                    <img class="mb-4" src="{{raspisanie.image.url}}"  alt="Image">  
+                    <div class="content">
+                        <h3 class="title">{{raspisanie.name}}</h3> 
+                        <div class="news-meta fix">
+                           <span><i class="zmdi zmdi-calendar-check"></i>{{raspisanie.created_raspisanie}}</span>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                    
+                <!-- Comment -->
+                   
+            </div>
+            
+            <!-- Sidebar Wrapper -->
+            <div class="col-xl-3 col-lg-4 col-12">
+                <!-- Recent News -->
+                <div class="single-sidebar">
+                    <h4 class="title">Сабактардын Жугуртмосу</h4>
+                    <div class="recent-news">
+                        {% for news in raspisanie_new%}
+                        <div class="recent-news-item">
+                            <a class="image" href="{%url 'raspisanie_detail' raspisanie.id%}"><img src="{{news.image.url}}" alt="Image"></a>
+                            <div class="content">
+                                <h5><a href="{%url 'raspisanie_detail' raspisanie.id%}">{{news.name}}</a></h5>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+                <!-- Category -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of News Area-->
+        
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

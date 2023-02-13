@@ -1,0 +1,53 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+<body class='teacher'>    
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>Биздин Класстар </h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+   
+<!-- Course Area Start -->
+<div class="course-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Course Wrapper -->
+        <div class="course-wrapper row mb--30">
+            <!-- Course Item -->
+            {%for students in students%}
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="course-item">
+                    <a class="image"><img src="{{students.image_student.url}}" width = '200px' alt="Image"></a>
+                    <div class="content">
+                        <h4 class="title"><a>{{students.name_student}}</a></h4>
+
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Course Area -->
+<!-- Footer Top Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

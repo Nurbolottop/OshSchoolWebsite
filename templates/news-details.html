@@ -1,0 +1,84 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>{{news.name_news}}</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                    <li><a href="{%url 'news' %}">Акыркы Жанылыктар</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-12 mb-20">
+                <!-- Single News Details -->
+               <div class="single-news-details">
+                    <img class="mb-4" src="{{news.image_news.url}}"  alt="Image">  
+                    <div class="content">
+                        <h3 class="title">{{news.name_news}}</h3> 
+                        <div class="news-meta fix">
+                           <span><i class="zmdi zmdi-calendar-check"></i>{{news.created_news}}</span>
+                        </div>
+                        <p>{{news.description_news}}</p>
+                        
+                        
+                    </div>
+                </div>
+                    
+                <!-- Comment -->
+                   
+            </div>
+            
+            <!-- Sidebar Wrapper -->
+            <div class="col-xl-3 col-lg-4 col-12">
+                <!-- Recent News -->
+                <h4 class="title">Акыркы Жанылыктар</h4>
+                {% for news in random_new%}
+
+                <div class="single-sidebar">
+
+                    <div class="recent-news">
+                        <div class="recent-news-item">
+
+                                <a class="image" style="max-length:450px;" style="max-width:350px;" href="{%url 'news_detail' news.id%}"><img style="max-length:450px;" style="max-width:350px;" src="{{news.image_news.url}}" alt="Image"></a>
+                                <div class="content">
+                                    <h5><a href="{%url 'news_detail' news.id%}">{{news.name_news}}</a></h5>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                {%endfor%}
+
+                <!-- Category -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of News Area-->
+        
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

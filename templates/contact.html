@@ -1,0 +1,87 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>Байланыш</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                    <li><a href="{%url 'contact'%}">Байланыш</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- Contact Area Start -->
+<div class="contact-area bg-white section pt-120 pb-70">
+    <div class="container">
+        <div class="contact-wrapper row">
+            <div class="col-md-4 offset-lg-1 col-sm-5 col-xs-12 mb-50">
+                <!-- Contact Info -->
+                <h4>Биз менен байланышуу</h4>
+                <div class="contact-info">
+                    <p><i class="zmdi zmdi-phone"></i><span>{{contact.phone_site}}</span></p>
+                    <p><i class="zmdi zmdi-email"></i><span>{{contact.email_site}}</span></p>
+                    <p><i class="zmdi zmdi-pin"></i><span>{{contact.location_site}}<br>
+                    Dhaka-1200, UK</span></p>
+                </div>
+                <!-- Contact Social -->
+                {% comment %} <h4>social media</h4>
+                <div class="contact-social fix">
+                    <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                    <a href="www.plus.google.com"><i class="fa fa-google-plus"></i></a>
+                    <a href="www.pinterest.com"><i class="fa fa-pinterest"></i></a>
+                    <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                </div> {% endcomment %}
+            </div>
+            <!-- Contact Form -->
+            <div class="col-lg-6 col-md-8 col-sm-7 col-xs-12">
+                <h4>Билдируу калтыру учун</h4>
+                <form class="contact-form" method="POST">
+                    {%csrf_token%}
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-20">
+                            <input type="text" name="name"  placeholder="Атынызды жазыныз.">
+                        </div>
+                        <div class="col-md-6 col-12 mb-20">
+                            <input type="email" name="email"  placeholder="Почтанызды Жазыныз">
+                        </div>
+                        <div class="col-12 mb-20">
+                            <textarea name="message" cols="30" rows="10" placeholder="Кабар калтырып кетиниз."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn-submit" id = "sumbit" type="submit"><Билдирууну жонотуу></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-message"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Contact Area -->
+       
+<!-- Google Map Area Start -->
+<div class="section contactMap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6056.199011578115!2d72.93106251124135!3d40.62768748174372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bda7425fd7700d%3A0xac555213c6b28a2f!2z0JrRi9C30YvQuy3QodCw0YDQsNC5INC-0YDRgtC-INC80LXQutGC0LXQsdC4!5e0!3m2!1sru!2skg!4v1669886711244!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- End of Google Map Area -->
+       
+<!-- Footer Top Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

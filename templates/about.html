@@ -1,0 +1,284 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>Биз жонундо</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+
+                    <li><a href="{%url 'about'%}">Биз жонундо</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- About Area Start -->
+<div class="about-area section bg-white pt-120 pb-90">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- About Image -->
+            <div class="about-image col-md-5 col-xs-12 float-end mb-4 mb-md-0"><img src="{{about.image.url}}" alt="Image"></div>
+            <!-- About Content -->
+            <div class="about-content col-md-7 col-xs-12 mt-0">
+                <h3>{{about.name}}</h3>
+                <p>{{about.descriptions}}</p>
+                <a class="btn" href="{% url 'contact'%}">Биз менен байланышуу</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of About Area -->
+
+<!-- Funfact Area Start -->
+<div class="funfact-area section pt-100 pb-50">
+    <div class="container">
+        <div class="row">
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.years_school}}</span>+</h2>
+                    <h4>МУГАЛИМДЕР</h4>
+                </div>
+            </div>
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.child_school}}</span>+</h2>
+                    <h4>ОКУУЧУЛАР</h4>
+                </div>
+            </div>
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.graduate_school}}</span>+</h2>
+                    <h4>БҮТҮРҮҮЧҮЛӨР (ЖЫЛЫНА)</h4>
+                </div>
+            </div>
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.book_school}}</span>+</h2>
+                    <h4>КИТЕПТЕРДИН САНЫ</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Funfact Area -->
+       
+<!-- Skill Area Start -->
+<div class="skill-area  section bg-white pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-80">
+                <h3>Биздин Сабактар</h3>
+            </div>
+        </div>
+        <div class="row mb--30">
+            <!-- Single Skill -->
+            {%for lesson in lesson %}
+            <div class="col-md-6 col-12 mb-30">
+                <h4 class="progress-title">{{lesson.name}}</h4>
+                <div class="progress">
+                    <div class="progress-bar" data-progress="{{lesson.number}}%"></div>
+                </div>
+            </div>
+            {%endfor%}
+                
+            </div> 
+        </div>
+    </div>
+</div>
+<!--End of Skill Area-->
+
+<!-- Testimonial Area Start -->
+<div class="testimonial-area overlay section pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-10 col-12 m-auto">
+                <!-- Testimonial Slider -->
+                <div class="testimonial-slider text-center">
+                    <!-- Single Testimonial -->
+                    {%for makal in makal%}
+                    <div class="sin-testimonial">
+                        <p>{{makal.name}}</p>
+                        <h4>{{makal.description}}</h4>
+                    </div>
+                    {%endfor%}
+                    <!-- Single Testimonial -->
+                    
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Testimonial Area -->
+        
+<!-- Teachers Area Start -->
+{% comment %} <div class="teachers-area section bg-white pt-120 pb-100">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-60">
+                <h3>our TEACHERS</h3>
+                <p>There are many variations of passages</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Teacher Slider -->
+            <div class="teacher-slider">
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/1.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Julie Jimenez</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/2.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Ronald Wilson</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/3.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Sarah Burke</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/4.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Tiffany Bryant</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/1.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Julie Jimenez</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/2.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Ronald Wilson</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/3.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Sarah Burke</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Teacher -->
+                <div class="col-xs-12">
+                    <div class="single-teacher text-center">
+                        <img src="img/teacher/4.jpg" alt="Image">
+                        <div class="content">
+                            <h4>Tiffany Bryant</h4>
+                            <h5>Teacher</h5>
+                            <div class="social-links">
+                                <a href="www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- End of Teachers Area -->
+        
+<!-- Footer Top Area Start -->
+{% include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

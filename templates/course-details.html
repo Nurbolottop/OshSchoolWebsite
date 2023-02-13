@@ -1,0 +1,60 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>{{pride.name_pride}}</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                    <li><a href="{%url 'pride_detail' pride.id%}">Сыймыктанабыз</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- Course Area Start -->
+<div class="course-area bg-white section pt-120 pb-70">
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-xl-9 col-lg-8 col-12 mb-20">
+                <!-- Single Course Details -->
+                <div class="single-course-details">
+                    <div class="image mb-4"><img alt="Image" src="{{pride.image_pride.url}}"></div>
+                    <div class="content">
+                        <h4 class="title">{{pride.name_pride}}</h4>
+                        
+                        <div class="course-text-content">
+                            <p>{{pride.description_pride}}</p>
+                        </div>  
+                    </div>  
+                    
+                </div>
+                <!-- Comment -->
+                
+            </div>
+            
+            <!-- Sidebar Wrapper -->
+            
+        </div>
+    </div>
+</div>
+<!--End of Course Area-->
+        
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

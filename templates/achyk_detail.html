@@ -1,0 +1,63 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1 class="section_title">{{achyksaat.name}}</h1>
+
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                    <li><a href="{%url 'achyk_saat' %}">Артка кайтуу</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+
+            
+
+           
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <section class="schedule_page text_page section">
+                <div class="container">
+                <div class="list" data-align-height="span">
+                    {%for achyksaat in achyksaat.achyksaat.all%}
+
+                    <div class = 'adi_block'><span style="height: 182px;"><a href="{{achyksaat.achyksaat.url}}" data-toggle="_modal" data-number="0">{{achyksaat.name}}</a></span></div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="text">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </div>
+                </div>
+            </section>
+
+        </div>
+       
+    </div>
+</div>
+<!--End of News Area-->
+        
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

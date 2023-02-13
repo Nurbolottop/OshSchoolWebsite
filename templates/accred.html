@@ -1,0 +1,50 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>АККРЕДИТАЦИЯ 2022-2023</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-80">
+                <h3>АККРЕДИТАЦИЯ 2022-2023</h3>
+            </div>
+
+          <div class = 'adi_block'><span style="height: 182px;"><a href="{% url 'inst_akred'%}" data-toggle="_modal" data-number="0">ИНСТИТУЦИОНАЛДЫК АККРЕДИТАЦИЯ</a></span></div>
+          <div class = 'adi_block'><span style="height: 182px;"><a href="{% url 'prog_akred'%}" data-toggle="_modal" data-number="0">ПРОГРАММАЛЫК АККРЕДИТАЦИЯ</a></span></div>
+
+        </div>
+       
+    </div>
+</div>
+<!-- End of Latest News Area -->
+        
+<!-- Footer Bottom Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}
