@@ -6,12 +6,10 @@ class Settings(models.Model):
         max_length=244,
         verbose_name='Сайттын аты!'
     )
-
     logo_site = models.ImageField(
         upload_to='logo_site/',
         verbose_name='Мектептин логотиби'
     )
-
     description_site = models.TextField(
         verbose_name='Мектеп боюнча маалымат'
     )
@@ -35,7 +33,6 @@ class Slide(models.Model):
     description_slide = models.TextField(
         verbose_name='Слайдка маалымат!'
     )
-
     def __str__(self):
         return self.description_slide
 

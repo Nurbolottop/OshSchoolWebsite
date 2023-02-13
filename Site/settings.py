@@ -39,21 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_cleanup.apps.CleanupConfig'
+    #apps
     'apps.settings',
-    'apps.prides',
-    'apps.news',
     'apps.contacts',
     'apps.teacher',
-    'apps.prog_akred',
-    'apps.accred',
-    'apps.parlament',
-    'apps.raspisanie',
-    'apps.students',
+    'apps.accreditational',
     'apps.parents',
-    'apps.inst_akred',
-    'apps.about',
-    'apps.gallery',
-    'apps.achyk',
 ]
 
 MIDDLEWARE = [
