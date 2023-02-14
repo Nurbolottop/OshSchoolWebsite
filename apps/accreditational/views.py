@@ -8,7 +8,7 @@ def main_accreditations(request):
     context = {
         'setting':setting,
     }
-    return render(request, 'accred.html', context)
+    return render(request, 'accreditations/accred.html', context)
 
 def institutional_accreditations(request):
     accreditation = Institutional_Accreditation.objects.all()
@@ -17,7 +17,7 @@ def institutional_accreditations(request):
         'accreditation':accreditation,
         'setting':setting,
     }
-    return render(request, 'inst_akred.html', context)
+    return render(request, 'accreditations/inst_akred.html', context)
 
 def institutional_accreditations_detail(request,id):
     accreditation = Institutional_Accreditation.objects.get(id = id)
@@ -26,7 +26,7 @@ def institutional_accreditations_detail(request,id):
         'accreditation':accreditation,
         'setting':setting,
     }
-    return render(request, 'inst_detail.html', context)
+    return render(request, 'accreditations/inst_detail.html', context)
 
 def program_accreditation(request):
     accreditation = Program_Accreditation.objects.all()
@@ -35,7 +35,7 @@ def program_accreditation(request):
         'accreditation':accreditation,
         'setting':setting,
     }
-    return render(request, 'prog_akred.html', context)
+    return render(request, 'accreditations/prog_akred.html', context)
 
 def program_accreditation_detail(request,id):
     accreditation = Program_Accreditation.objects.get(id = id)
@@ -45,4 +45,4 @@ def program_accreditation_detail(request,id):
         'accreditation':accreditation,
         'setting':setting,
     }
-    return render(request, 'prog_detail.html', context)
+    return render(request, 'accreditations/prog_detail.html', context)

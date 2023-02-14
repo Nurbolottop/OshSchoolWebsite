@@ -3,7 +3,7 @@
 {%block content%}
 
 <!-- Header Area Start -->
-{%include 'header.html'%}
+{%include 'include/header.html'%}
 <!-- End of Header Area -->
 
 <!-- Page Banner Area Start -->
@@ -17,7 +17,7 @@
                 <!-- Breadcrumb -->
                 <ul class="breadcrumb">
                     <li><a href="{% url 'index'%}">Башкы бет</a></li>
-                    <li><a href="{%url 'inst_akred' %}">Артка кайтуу</a></li>
+                    <li><a href="{% url 'institutional_accreditations' %}">Артка кайтуу</a></li>
                 </ul>
             </div>
         </div>
@@ -43,8 +43,7 @@
  </section>
 <!--End of News Area-->
         
-{%include 'footer.html'%}
-<!-- End of Footer Bottom Area -->
+{%include 'include/footer.html'%}<!-- End of Footer Bottom Area -->
 
 <!-- jquery -->		
 {%endblock%}

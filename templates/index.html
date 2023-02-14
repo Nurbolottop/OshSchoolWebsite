@@ -3,7 +3,7 @@
 {%block content%}
 
 <!-- Header Area Start -->
-{%include 'header.html'%}
+{%include 'include/header.html'%}
 <!-- End of Header Area -->
 
 <!-- Slider Area Start -->
@@ -30,7 +30,7 @@
                     <h2 class="wow fadeInUp" data-wow-delay="0.5s">{{setting.name_site}}, мектебине</h2>
                     <h1 class="wow fadeInUp" data-wow-delay="1s">Кош келиниздер !</h1>
                     <p class="wow fadeInUp" data-wow-delay="1.5s">{{slide.description_slide}}</p>
-                    <a class="btn wow fadeInUp" data-wow-delay="2s" href="courses.html">Маалымат алуу</a>
+                    <a class="btn wow fadeInUp" data-wow-delay="2s" href="{% url 'about' %}">Маалымат алуу</a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
 <!-- About Area Start -->
 
 <!-- End of About Area -->
-   
+{% if pride%}   
 <!-- Course Area Start -->
 <div class="course-area bg-gray section pt-120 pb-120">
     <div class="container">
@@ -69,7 +69,9 @@
     </div>
 </div>
 <!-- End of Course Area -->
+{% endif %}
 
+{% if data %}
 <!-- Funfact Area Start -->
 <div class="funfact-area section pt-100 pb-50">
     <div class="container">
@@ -106,7 +108,9 @@
     </div>
 </div>
 <!-- End of Funfact Area -->
-    
+{% endif %}
+
+{% if gallery %}
 <!-- Gallery Area Start -->
 <div class="gallery-area section bg-white pt-120 pb-0">
     <div class="container">
@@ -126,7 +130,8 @@
     </div>
 </div>
 <!-- End of Gallery Area -->
-    
+{% endif %}
+
 <!-- Event Area Start -->
 {% comment %} <div class="event-area bg-white section pt-120 pb-120">
     <div class="container">
@@ -214,6 +219,7 @@
 </div> {% endcomment %}
 <!-- End of Testimonial Area -->
 
+{% if news%}
 <!-- News Area Start --> 
 <div class="news-area bg-white section pt-120 pb-120">
     <div class="container">
@@ -225,7 +231,7 @@
         </div>
         <div class="row mb--30">
             <!-- News Item -->
-            {%for news in news%}
+            {% for news in news %}
             <div class="col-lg-4 col-md-6 col-12 mb-30">
                 <div class="news-item">
                     <a href="{%url 'news_detail' news.id%}" class="image"><img src="{{news.image_news.url}}" alt="Image"></a>
@@ -244,13 +250,14 @@
     </div>
 </div>
 <!-- End of Latest News Area -->
-
+{% endif %}
 <!-- Footer Top Area Start -->
 
 <!--End of Footer Top Area-->
 
 <!-- Footer Bottom Area Start -->
-{%include 'footer.html'%}
+{%include 'include/footer.html'%}
+
 <!-- End of Footer Bottom Area -->
 
 <!-- jquery -->		

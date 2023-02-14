@@ -10,8 +10,6 @@ class Parents(models.Model):
         upload_to='parents_document/', 
         verbose_name='Документ файл'
         )
-
-
         
     def __str__(self):
         return f"{self.name} - {self.parents_doc}"
@@ -39,7 +37,7 @@ class Parlament(models.Model):
 
     class Meta:
         verbose_name = "Мектеп парламенти"
-        verbose_name = "Мектеп парламенти"
+        verbose_name_plural = "Мектеп парламенти"
         ordering = ('id', )
 
 class Student(models.Model):
@@ -57,7 +55,7 @@ class Student(models.Model):
 
     class Meta:
         verbose_name = "Класстар"
-        verbose_name = "Класстар"
+        verbose_name_plural = "Класстар"
         ordering = ('id', )
         
 class Teacher(models.Model):
@@ -78,7 +76,7 @@ class Teacher(models.Model):
 
     class Meta:
         verbose_name = "Мугалимдер"
-        verbose_name = "Мугалимдер"
+        verbose_name_plural = "Мугалимдер"
         ordering = ('id', )
         
 # Create your models here.

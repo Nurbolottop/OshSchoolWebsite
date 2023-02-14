@@ -6,6 +6,6 @@ urlpatterns = [
     path("about/", about, name= "about"),
     path("pride_detail/", pride_detail, name= "pride_detail"),
     path("news/", news, name= "news"),
-    path("news_detail/", news_detail, name= "news_detail"),
+    path("news_detail/<int:id>/", news_detail, name= "news_detail"),
     path("contact/", contact, name= "contact"),
 ]
