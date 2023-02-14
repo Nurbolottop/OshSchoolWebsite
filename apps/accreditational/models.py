@@ -1,13 +1,10 @@
 from django.db import models
-from django_cleanup import cleanup
-
 # Create your models here.
 class Institutional_Accreditation(models.Model):
     name = models.CharField(
         max_length=255, 
         verbose_name='Аты'
         )
-
     def __str__(self):
         return self.name
 
@@ -33,14 +30,7 @@ class Institutional_Accreditation_Detail(models.Model):
         verbose_name='Аты'
         )
 
-    @property
-    def compressed_file_size(self):
-        return self.accreditation_detail.size
 
-    def save(self, *args, **kwargs):
-        # автоматически сжимаем файл перед сохранением
-        cleanup(self, 'accreditation_detail')
-        super().save(*args, **kwargs)
         
     def __str__(self):
         return f"{self.name} - {self.accreditation_detail}"
@@ -79,14 +69,7 @@ class Program_Accreditation_Detail(models.Model):
         max_length=255, 
         verbose_name='Аты'
         )
-    @property
-    def compressed_file_size(self):
-        return self.accreditation_detail.size
 
-    def save(self, *args, **kwargs):
-        # автоматически сжимаем файл перед сохранением
-        cleanup(self, 'accreditation_detail')
-        super().save(*args, **kwargs)
         
     
     def __str__(self):

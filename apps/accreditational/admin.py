@@ -1,3 +1,7 @@
 from django.contrib import admin
-
+from apps.accreditational.models import Institutional_Accreditation,Institutional_Accreditation_Detail,Program_Accreditation,Program_Accreditation_Detail
 # Register your models here.
+admin.site.register(Institutional_Accreditation)
+admin.site.register(Institutional_Accreditation_Detail)
+admin.site.register(Program_Accreditation)
+admin.site.register(Program_Accreditation_Detail)

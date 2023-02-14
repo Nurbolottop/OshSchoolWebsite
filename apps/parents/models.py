@@ -1,5 +1,4 @@
 from django.db import models
-from django_cleanup import cleanup
 
 # Create your models here.
 class Parents(models.Model):
@@ -12,14 +11,7 @@ class Parents(models.Model):
         verbose_name='Документ файл'
         )
 
-    @property
-    def compressed_file_size(self):
-        return self.parents_doc.size
 
-    def save(self, *args, **kwargs):
-        # автоматически сжимаем файл перед сохранением
-        cleanup(self, 'parents_doc')
-        super().save(*args, **kwargs)
         
     def __str__(self):
         return f"{self.name} - {self.parents_doc}"

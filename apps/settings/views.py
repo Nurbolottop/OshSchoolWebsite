@@ -5,7 +5,6 @@ from django.core.mail import send_mail
 # Create your views here.
 def index(request):
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     slide = Slide.objects.latest('id')
     pride = Pride.objects.all()
     data = Data.objects.latest('id')
@@ -13,7 +12,6 @@ def index(request):
     news = News.objects.all()
     context = {
         'setting':setting,
-        'contact':contact,
         'slide':slide,
         'pride':pride,
         'data':data,
@@ -28,11 +26,9 @@ def about(request):
     lesson = Lessons.objects.all()
     makal = Makal.objects.all()
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     context = {
         'about':about,
         'setting':setting,
-        'contact':contact,
         'lesson':lesson,
         'makal':makal,
         'data':data
@@ -41,22 +37,18 @@ def about(request):
 
 def pride_detail(request,id):
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     pride = Pride.objects.get(id =id)
     context = {
         'setting':setting,
-        'contact':contact,
         'pride':pride,
     }
     return render(request, 'course-details.html', context)
 
 def news(request):
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     news = News.objects.all()
     context = {
         'setting':setting,
-        'contact':contact,
         'news': news
     }
     return render(request, 'news.html', context)
@@ -65,10 +57,8 @@ def news_detail(request,id):
     random_new = News.objects.all().order_by('?')
     news = News.objects.get(id =id)
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     context = {
         'setting':setting,
-        'contact': contact,
         'news':news,
         'random_new':random_new,
     }

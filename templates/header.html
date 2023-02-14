@@ -35,28 +35,26 @@
                                 <li><a href="{% url 'students'%}">Окуучулар/Класстар</a>
                                     <ul class="sub-menu">
                                         <li><a href="{% url 'parlament'%}">Манас жаштар уюму</a></li>
-                                        <li><a href="{% url 'raspisanie'%}">САБАКТАРДЫН ЖУГУРТМОСУ</a></li>
 
                                     </ul>
                                 <li><a href="{% url 'parents'%}">Ата-энелерге</a>
 
 
-                                <li><a href="{%url 'news'%}">Жанылыктар</a>
+                                <li><a href="{% url 'news' %}">Жанылыктар</a>
                                 
                                 </li>
-                                <li><a href="{%url 'accred'%}">АККРЕДИТАЦИЯ 2022-2023</a>
+                                <li><a href="{% url 'main_accreditations' %}">АККРЕДИТАЦИЯ 2022-2023</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{% url 'inst_akred'%}">ИНСТИТУЦИОНАЛДЫК АККРЕДИТАЦИЯ</a></li>
-                                        <li><a href="{%url 'prog_akred'%}">ПРОГРАММАЛЫК АККРЕДИТАЦИЯ</a></li>
+                                        <li><a href="{% url 'institutional_accreditations'%}">ИНСТИТУЦИОНАЛДЫК АККРЕДИТАЦИЯ</a></li>
+                                        <li><a href="{% url 'program_accreditation'%}">ПРОГРАММАЛЫК АККРЕДИТАЦИЯ</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Кошумча</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{% url 'achyk_saat'%}">Ачык сааттар </a></li>
+                                        <li><a href="{% url 'achyksaat' %}">Ачык сааттар </a></li>
 
-                                        <li><a href="{% url 'about'%}">Биз жонундо </a></li>
-                                        <li><a href="{%url 'contact'%}">Байланыш</a></li>
-                                        <li><a href="{%url 'gallery'%}">Галерея</a></li>
+                                        <li><a href="{% url 'about' %}">Биз жонундо </a></li>
+                                        <li><a href="{% url 'contact' %}">Байланыш</a></li>
 
 
                                     </ul>
