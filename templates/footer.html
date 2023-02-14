@@ -1,0 +1,67 @@
+{%load static%}
+<div class="footer-top-area section pt-100 pb-0 pb-xl-4">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Widget -->
+            <div class="footer-widget col-lg-3 col-md-6 col-12 mb-50">
+                <a class="footer-logo" href="{% url 'index'%}"><img src="{{setting.logo_site.url}}" width = '100px'alt="Image"></a>
+                <p>{{setting.description_site}}</p>
+                
+                <div class="footer-social">
+                    <a target="_blank" rel="noopener" href="{{contact.facebook_site}}"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" rel="noopener" href="{{contact.instagram_site}}"><i class="fa fa-instagram"></i></a>
+
+                </div>
+            </div>
+            <!-- Footer Widget -->
+            <div class="footer-widget col-lg-3 col-md-6 col-12 mb-50">
+                <h3>БАЙЛАНЫШ</h3>
+                <ul>
+                    <li><i class="fa fa-phone"></i> <span>{{contact.phone_site}}</span></li>
+                    <li><i class="fa fa-envelope"></i> <span>{{contact.email_site}}</span></li>
+
+                </ul>
+            </div>
+            <!-- Footer Widget -->
+            <div class="footer-widget col-lg-3 col-md-6 col-12 mb-50">
+                <h3>ПАЙДАЛУУ ШИЛТЕМЕЛЕР</h3>
+                <ul>
+                    <li><a href="{% url 'teacher'%}">Мугалимдер </a></li>
+                    <li><a href="{% url 'students'%}">Окуучулар/Класстар</a></li>
+                    <li><a href="{%url 'news'%}">Жанылыктар</a></li>
+                    <li><a href="{%url 'accred'%}">АККРЕДИТАЦИЯ </a></li>
+                   
+                </ul>
+            </div>
+            <!-- Footer Widget -->
+            
+        </div>
+    </div>
+</div>
+<footer class="footer-bottom-area section">
+    <div class="container">
+        <div class="row">
+            <div class="text-start col-md-6 col-sm-12">
+                <p>© Copyrights 2022 {{settings.name_site}} мектеби.  Бардык укуктар корголгон</p>
+            </div>
+            <div class="footer-widget col-lg-3 col-md-6 col-12 mb-50">
+
+                <p>Сайтты тузгон: Erkinbaev Nurbolot</p>
+                <div class="footer-social">
+
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com/erk1nbaew/"><i class="fa fa-instagram"></i></a>
+                    <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCgOtQhhCgH8Di-aGvLfLYcQ"><i class="fa fa-youtube"></i></a>
+                    
+                    <a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=558000350&text&type=phone_number&app_absent=0"><i class="fa fa-whatsapp"></i></a>
+
+                    <p><a href="https://github.com/Nurbolottop" title="">Портфолио</i></a></p>
+
+
+                </div>
+
+
+            </div>
+            
+        </div>
+    </div>
+</footer>

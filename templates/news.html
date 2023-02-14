@@ -1,0 +1,64 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>Акыркы Жанылыктар</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                    <li><a href="{%url 'news' %}">Акыркы Жанылыктар</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-80">
+                <h3>Жанылыктар</h3>
+            </div>
+        </div>
+        <div class="row mb--30">
+            <!-- News Item -->
+            {%for news in news%}
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="news-item">
+                    <a href="{%url 'news_detail' news.id%}" class="image"><img src="{{news.image_news.url}}" alt="Image"></a>
+                    <div class="content">
+                        <h3><a href="{%url 'news_detail' news.id%}">{{news.name_news}}</a></h3>
+                        <div class="news-meta fix">
+                           <span><i class="zmdi zmdi-calendar-check"></i>{{news.created_news}}</span>
+                       </div>
+                       <p>{{news.description_news}}</p>
+                       <a href="{%url 'news_detail' news.id%}">Улантып окуу</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Latest News Area -->
+        
+<!-- Footer Bottom Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

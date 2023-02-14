@@ -1,0 +1,75 @@
+{%load static%}
+
+<header class="header-area section">
+    <!-- Header Top -->
+    <div class="header-top section">
+        <div class="container">
+            <div class="row">
+                <!-- Header Top Left -->
+                <div class="header-top-left text-start col-7">
+                    <p>Суроонуз барбы ? {{contact.phone_site}}</p>
+                </div>
+                <!-- Header Top Right -->
+                
+            </div>
+        </div>
+    </div>
+    <!-- Header Bottom -->
+    <div class="header-bottom bg-white sticker section sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                       <!-- Header Logo -->
+                    <div class="header-logo float-start">
+                        <a href="{%url 'index'%}"><img src="{{setting.logo_site.url}}" width="80px" alt="logo"></a>
+                    </div>
+                    <!-- Header Buttons -->
+                    
+                    <!-- Main Menu -->
+                    <div class="main-menu float-end hidden-xs">
+                        <nav>
+                            <ul>
+                                <li class="active"><a href="{% url 'index'%}">Башкы бет</a></li>
+                                
+                                <li><a href="{% url 'teacher'%}">Мугалимдер</a>
+                                <li><a href="{% url 'students'%}">Окуучулар/Класстар</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'parlament'%}">Манас жаштар уюму</a></li>
+                                        <li><a href="{% url 'raspisanie'%}">САБАКТАРДЫН ЖУГУРТМОСУ</a></li>
+
+                                    </ul>
+                                <li><a href="{% url 'parents'%}">Ата-энелерге</a>
+
+
+                                <li><a href="{%url 'news'%}">Жанылыктар</a>
+                                
+                                </li>
+                                <li><a href="{%url 'accred'%}">АККРЕДИТАЦИЯ 2022-2023</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'inst_akred'%}">ИНСТИТУЦИОНАЛДЫК АККРЕДИТАЦИЯ</a></li>
+                                        <li><a href="{%url 'prog_akred'%}">ПРОГРАММАЛЫК АККРЕДИТАЦИЯ</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Кошумча</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'achyk_saat'%}">Ачык сааттар </a></li>
+
+                                        <li><a href="{% url 'about'%}">Биз жонундо </a></li>
+                                        <li><a href="{%url 'contact'%}">Байланыш</a></li>
+                                        <li><a href="{%url 'gallery'%}">Галерея</a></li>
+
+
+                                    </ul>
+                                </li>
+                                    
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu"></div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</header>

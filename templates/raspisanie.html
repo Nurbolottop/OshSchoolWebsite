@@ -1,0 +1,62 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>Сабактардын Жугуртмосу</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-80">
+                <h3>Сабактардын Жугуртмосу</h3>
+            </div>
+        </div>
+        <div class="row mb--30">
+            <!-- News Item -->
+            {%for raspisanie in raspisanie%}
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="news-item">
+                    <a href="{%url 'raspisanie_detail' raspisanie.id%}" class="image"><img src="{{raspisanie.image.url}}" alt="Image"></a>
+                    <div class="content">
+                        <h3><a href="{%url 'raspisanie_detail' raspisanie.id%}">{{raspisanie.name}}</a></h3>
+                        <div class="news-meta fix">
+                           <span><i class="zmdi zmdi-calendar-check"></i>{{raspisanie.created_raspisanie}}</span>
+                       </div>
+                       <a href="{%url 'raspisanie_detail' raspisanie.id%}">Улантуу</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Latest News Area -->
+        
+<!-- Footer Bottom Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

@@ -1,0 +1,257 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Slider Area Start -->
+<div class="slider-area section">
+    <div id="hero-slider" class="slides">	
+        <img src="{{slide.first_slide.url}}" alt="Image" title="#slider-caption1"/>
+        <img src="{{slide.second_slide.url}}" alt="Image" title="#slider-caption2"/>
+    </div> 
+    <div id="slider-caption1" class="nivo-html-caption nivo-caption">
+        <div class="container">
+            <div class="row">
+                <div class="hero-content col-md-12">        
+                    <h2 class="wow fadeInUp" data-wow-delay="0.5s">{{setting.name_site}},орто мектеби мекемесине </h2>
+                    <h1 class="wow fadeInUp" data-wow-delay="1s">{{slide.description_slide}}</h1>
+                    <a class="btn wow fadeInUp" data-wow-delay="2s" href="{%url 'about'%}">Маалымат алуу</a>
+                </div>
+            </div>
+        </div>
+    </div>	
+    <div id="slider-caption1" class="nivo-html-caption nivo-caption">
+        <div class="container">
+            <div class="row">
+                <div class="hero-content col-md-12">
+                    <h2 class="wow fadeInUp" data-wow-delay="0.5s">{{setting.name_site}}, мектебине</h2>
+                    <h1 class="wow fadeInUp" data-wow-delay="1s">Кош келиниздер !</h1>
+                    <p class="wow fadeInUp" data-wow-delay="1.5s">{{slide.description_slide}}</p>
+                    <a class="btn wow fadeInUp" data-wow-delay="2s" href="courses.html">Маалымат алуу</a>
+                </div>
+            </div>
+        </div>
+    </div>	
+</div>
+<!-- End of Slider Area -->
+
+<!-- About Area Start -->
+
+<!-- End of About Area -->
+   
+<!-- Course Area Start -->
+<div class="course-area bg-gray section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title text-center col-xs-12 mb-80">
+                <h3>Сыймыктанабыз</h3>
+            </div>
+        </div>
+        <!-- Course Wrapper -->
+        <div class="course-wrapper row mb--30">
+            <!-- Course Item -->
+            {%for pride in pride%}
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
+                <div class="course-item">
+                    <a class="image" href="{% url 'pride_detail' pride.id%}"><img src="{{pride.image_pride.url}}" alt="Image"></a>
+                    <div class="content">
+                        <h4 class="title"><a href="{% url 'pride_detail' pride.id%}">{{pride.name_pride}}</a></h4>
+                        
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Course Area -->
+
+<!-- Funfact Area Start -->
+<div class="funfact-area section pt-100 pb-50">
+    <div class="container">
+        <div class="row">
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.years_school}}</span>+</h2>
+                    <h4>МУГАЛИМДЕР </h4>
+                </div>
+            </div>
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.child_school}}</span>+</h2>
+                    <h4>ОКУУЧУЛАР </h4>
+                </div>
+            </div>
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.graduate_school}}</span>+</h2>
+                    <h4>БҮТҮРҮҮЧҮЛӨР (ЖЫЛЫНА)</h4>
+                </div>
+            </div>
+            <!-- Single Funfact -->
+            <div class="col-md-3 col-sm-6 mb-50">
+                <div class="single-funfact">
+                    <h2><span class="counter">{{data.book_school}}</span>+</h2>
+                    <h4>КИТЕПТЕРДИН САНЫ</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Funfact Area -->
+    
+<!-- Gallery Area Start -->
+<div class="gallery-area section bg-white pt-120 pb-0">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="section-title mb-80">
+            <h3>Сертификаттар</h3>
+        </div>
+    </div>
+    <!-- Portfolio Wrapper -->
+    <div class="container-fluid">
+        <div class="row">
+            {%for image in certificate%}
+            <a href="{{image.image.url}}" class="gallery-item image-popup col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12"><img src="{{image.image.url}}" alt="Image"></a>
+            <!-- Gallery Item -->
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Gallery Area -->
+    
+<!-- Event Area Start -->
+{% comment %} <div class="event-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-80">
+                <h3>OUR EVENTS</h3>
+                <p>There are many variations of passages</p>
+            </div>
+        </div>
+        <div class="row mb--30">
+            <!-- Event Item -->
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="event-item">
+                    <img src="{% static 'img/event/1.jpg' %}" alt="Image">
+                    <span class="date">20 <span>Apr</span></span>
+                    <div class="content">
+                        <h3><a href="event-details.html">Learn English in ease</a></h3>
+                        <div class="event-meta fix">
+                            <span><i class="zmdi zmdi-time"></i> 4.00 pm - 8.00 pm</span>
+                            <span><i class="zmdi zmdi-pin"></i> Dhaka Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Item -->
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="event-item">
+                    <img src="{% static 'img/event/2.jpg' %}" alt="Image">
+                    <span class="date">24 <span>Apr</span></span>
+                    <div class="content">
+                        <h3><a href="event-details.html">Learn English in ease</a></h3>
+                        <div class="event-meta fix">
+                            <span><i class="zmdi zmdi-time"></i> 4.00 pm - 8.00 pm</span>
+                            <span><i class="zmdi zmdi-pin"></i> Dhaka Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Item -->
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="event-item">
+                    <img src="{% static 'img/event/3.jpg' %}" alt="Image">
+                    <span class="date">30 <span>Apr</span></span>
+                    <div class="content">
+                        <h3><a href="event-details.html">Learn English in ease</a></h3>
+                        <div class="event-meta fix">
+                            <span><i class="zmdi zmdi-time"></i> 4.00 pm - 8.00 pm</span>
+                            <span><i class="zmdi zmdi-pin"></i> Dhaka Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- End of Event Area -->
+
+<!-- Testimonial Area Start -->
+{% comment %} <div class="testimonial-area overlay section pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-10 col-12 m-auto">
+                <!-- Testimonial Slider -->
+                <div class="testimonial-slider text-center">
+                    <!-- Single Testimonial -->
+                    <div class="sin-testimonial">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable orem Ipsum available, but the majority have suffered.</p>
+                        <h4>Steven Hunt</h4>
+                    </div>
+                    <!-- Single Testimonial -->
+                    <div class="sin-testimonial">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable orem Ipsum available, but the majority have suffered.</p>
+                        <h4>Adam James</h4>
+                    </div>
+                    <!-- Single Testimonial -->
+                    <div class="sin-testimonial">
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable orem Ipsum available, but the majority have suffered.</p>
+                        <h4>Kattie Luis</h4>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- End of Testimonial Area -->
+
+<!-- News Area Start --> 
+<div class="news-area bg-white section pt-120 pb-120">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row">
+            <div class="section-title col-xs-12 mb-80">
+                <h3>Жанылыктар</h3>
+            </div>
+        </div>
+        <div class="row mb--30">
+            <!-- News Item -->
+            {%for news in news%}
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="news-item">
+                    <a href="{%url 'news_detail' news.id%}" class="image"><img src="{{news.image_news.url}}" alt="Image"></a>
+                    <div class="content">
+                        <h3><a href="{%url 'news_detail' news.id%}">{{news.name_news}}</a></h3>
+                        <div class="news-meta fix">
+                            <span><i class="zmdi zmdi-calendar-check"></i>{{news.created_news}}</span>
+                       </div>
+                       <p>{{news.description_news}}</p>
+                       <a href="{%url 'news_detail' news.id%}">Улантып окуу</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Latest News Area -->
+
+<!-- Footer Top Area Start -->
+
+<!--End of Footer Top Area-->
+
+<!-- Footer Bottom Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+<!-- jquery -->		
+{%endblock%}

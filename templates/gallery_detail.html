@@ -1,0 +1,46 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+<!-- Header Area Start -->
+{%include 'header.html'%}
+<!-- End of Header Area -->
+
+<!-- Page Banner Area Start -->
+<div class="page-banner-area overlay section">
+    <div class="container">
+        <div class="row">
+            <!-- Page Banner -->
+            <div class="page-banner text-center col-xs-12">
+                <h1>СҮРӨТ ГАЛЕРЕЯСЫ</h1>
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'index'%}">Башкы бет</a></li>
+                    <li><a href="{%url 'gallery' %}">Артка  кайтуу</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Page Banner Area -->
+    
+<!-- Gallery Area Start -->
+<div class="gallery-area section bg-white pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <!-- Gallery Item -->
+            {%for gallery in gallery.gallery.all%}
+
+            <a href="{{gallery.gallery_image.url}}" class="gallery-item image-popup col-xl-3 col-lg-4 col-sm-6 col-12"><img src="{{gallery.gallery_image.url}}" alt="Image"></a>
+            <!-- Gallery Item -->
+            {%endfor%}
+        </div>
+    </div>
+</div>
+<!-- End of Gallery Area -->
+        
+<!-- Footer Top Area Start -->
+{%include 'footer.html'%}
+<!-- End of Footer Bottom Area -->
+
+{%endblock%}
