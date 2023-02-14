@@ -211,3 +211,23 @@ class News(models.Model):
         verbose_name = 'Жанылыктар'
         verbose_name_plural = 'Жанылыктар'
         ordering = ('id', )
+        
+class Contact(models.Model):
+    name = models.CharField(
+        max_length=255, 
+        verbose_name="Аты!"
+        )
+    email = models.EmailField(
+        verbose_name='Почтасы'
+        )
+    message = models.TextField(
+        verbose_name='Кабары'
+        )
+
+    def __str__(self):
+        return f"Аты: {self.name}. Кабары: {self.message}"
+
+    class Meta:
+        verbose_name = 'Акыркы Кабарлар'
+        verbose_name_plural = 'Акыркы Кабарлар'
+        ordering = ('id', )

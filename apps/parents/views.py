@@ -1,27 +1,59 @@
 from django.shortcuts import render
-from apps.parents.models import Parents,Parlament
-from apps.contacts.models import Contact
+from apps.parents.models import Parents,Parlament,Student,Teacher,AchykSaat
 from apps.settings.models import Settings
 
 # Create your views here.
 def parents(request):
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     parent = Parents.objects.all()
     context = {
         'setting':setting,
-        'contact':contact,
         'parent':parent,
     }
     return render(request, 'parents.html', context)
 
 def parlament(request):
     setting = Settings.objects.latest('id')
-    contact = Contact.objects.latest('id')
     parlament = Parlament.objects.all()
     context = {
         'setting':setting,
-        'contact':contact,
         'parlament':parlament,
     }
     return render(request, 'parlament.html', context)
+
+def students(request):
+    setting = Settings.objects.latest('id')
+    students = Student.objects.all()
+    context = {
+        'setting':setting,
+        'students':students,
+    }
+    return render(request, 'students.html', context)
+
+def teacher(request):
+    setting = Settings.objects.latest('id')
+    teacher = Teacher.objects.all()
+    context = {
+        'setting':setting,
+        'teacher':teacher,
+    }
+    return render(request, 'teacher.html', context)
+
+def achyksaat(request):
+    achyksaat = AchykSaat.objects.all()
+    setting = Settings.objects.latest('id')
+    context = {
+        'achyksaat':achyksaat,
+        'setting':setting,
+    }
+    return render(request, 'achyk_saat.html', context)
+
+def achyksaat_detail(request,id):
+    achyksaat = AchykSaat.objects.get(id = id)
+    setting = Settings.objects.latest('id')
+    context = {
+        ''
+        'achyksaat':achyksaat,
+        'setting':setting,
+    }
+    return render(request, 'achyk_detail.html', context)

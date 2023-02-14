@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from apps.settings.models import Settings,Slide,Data,Certificate,About,Lessons,Makal,Pride,News
-from apps.contacts.models import Contact
+from django.shortcuts import render,redirect
+from apps.settings.models import Settings,Slide,Data,Certificate,About,Lessons,Makal,Pride,News,Contact
+from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
@@ -73,3 +73,22 @@ def news_detail(request,id):
         'random_new':random_new,
     }
     return render(request, 'news-details.html',context)
+
+def contact(request):
+    setting = Settings.objects.latest('id')
+    if request.method == "POST":
+        name  = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        Contact.objects.create(name = name, email = email, message = message)
+        send_mail(
+            f'{message}',
+            f'Саламатсызбы {name}, калтырган кабарынызга ыраазычылык билдиребиз. Биз сиз менен жакынкы убакта кабарлашабыз, сураныч байланышта болунуз. Сиздин кабарыныз: {message}, сиздин почтаныз: {email}',
+            "noreply@somehost.local",
+            [email]
+        )
+        return redirect('index')
+    context = {
+        'setting':setting,
+    }
+    return render(request, 'contact.html', context)
