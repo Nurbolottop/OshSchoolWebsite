@@ -10,7 +10,7 @@ def parents(request):
         'setting':setting,
         'parent':parent,
     }
-    return render(request, 'parents.html', context)
+    return render(request, 'other_settings/parents.html', context)
 
 def parlament(request):
     setting = Settings.objects.latest('id')
@@ -19,7 +19,7 @@ def parlament(request):
         'setting':setting,
         'parlament':parlament,
     }
-    return render(request, 'parlament.html', context)
+    return render(request, 'other_settings/parlament.html', context)
 
 def students(request):
     setting = Settings.objects.latest('id')
@@ -28,7 +28,7 @@ def students(request):
         'setting':setting,
         'students':students,
     }
-    return render(request, 'students.html', context)
+    return render(request, 'other_settings/students.html', context)
 
 def teacher(request):
     setting = Settings.objects.latest('id')
@@ -37,7 +37,7 @@ def teacher(request):
         'setting':setting,
         'teacher':teacher,
     }
-    return render(request, 'teacher.html', context)
+    return render(request, 'other_settings/teacher.html', context)
 
 def achyksaat(request):
     achyksaat = AchykSaat.objects.all()
@@ -46,7 +46,7 @@ def achyksaat(request):
         'achyksaat':achyksaat,
         'setting':setting,
     }
-    return render(request, 'achyk_saat.html', context)
+    return render(request, 'other_settings/achyk_saat.html', context)
 
 def achyksaat_detail(request,id):
     achyksaat = AchykSaat.objects.get(id = id)
@@ -56,4 +56,4 @@ def achyksaat_detail(request,id):
         'achyksaat':achyksaat,
         'setting':setting,
     }
-    return render(request, 'achyk_detail.html', context)
+    return render(request, 'other_settings/achyk_detail.html', context)

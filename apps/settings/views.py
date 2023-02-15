@@ -18,7 +18,7 @@ def index(request):
         'certificate':certificate,
         'news': news
     }
-    return render(request, 'index.html', context)
+    return render(request, 'settings/index.html', context)
 
 def about(request):
     about = About.objects.latest('id')
@@ -33,7 +33,7 @@ def about(request):
         'makal':makal,
         'data':data
     }
-    return render(request, 'about.html', context)
+    return render(request, 'settings/about.html', context)
 
 def pride_detail(request,id):
     setting = Settings.objects.latest('id')
@@ -42,7 +42,7 @@ def pride_detail(request,id):
         'setting':setting,
         'pride':pride,
     }
-    return render(request, 'course-details.html', context)
+    return render(request, 'settings/course-details.html', context)
 
 def news(request):
     setting = Settings.objects.latest('id')
@@ -51,7 +51,7 @@ def news(request):
         'setting':setting,
         'news': news
     }
-    return render(request, 'news.html', context)
+    return render(request, 'settings/news.html', context)
 
 def news_detail(request,id):
     random_new = News.objects.all().order_by('?')
@@ -62,7 +62,7 @@ def news_detail(request,id):
         'news':news,
         'random_new':random_new,
     }
-    return render(request, 'news-details.html',context)
+    return render(request, 'settings/news-details.html',context)
 
 def contact(request):
     setting = Settings.objects.latest('id')
@@ -81,4 +81,4 @@ def contact(request):
     context = {
         'setting':setting,
     }
-    return render(request, 'contact.html', context)
+    return render(request, 'settings/contact.html', context)
