@@ -22,29 +22,24 @@ class Settings(models.Model):
         verbose_name='Телефон номер',
         blank=True,null=True
     )
-
     email_site = models.EmailField(
         max_length=255,
         verbose_name='Почта',
         blank=True,null=True
     )
-
     location_site = models.CharField(
         max_length=255,
         verbose_name='Адрес',
         blank=True,null=True
     )
-
     facebook_site = models.URLField(
         verbose_name='Facebook',
         blank=True, null=True,
     )
-
     instagram_site = models.URLField(
         verbose_name='Instagram',
         blank=True, null=True
     )
-
     youtube_site = models.URLField(
         verbose_name='Youtube',
         blank=True, null=True
@@ -147,11 +142,11 @@ class Lessons(models.Model):
     name = models.CharField(
         max_length=255,
         verbose_name="Сабакты аты"
-        )
+    )
     number = models.CharField(
         max_length=255,
         verbose_name="Сабактын жакшы отулгон пайызы"
-        )
+    )
 
     def __str__(self):
         return self.name
@@ -164,11 +159,11 @@ class Lessons(models.Model):
 class Makal(models.Model):
     name = models.TextField(
         verbose_name="Макал"
-        )
+    )
     description = models.CharField(
         max_length=255, 
         verbose_name="Макалдын автору"
-        )
+    )
     def __str__(self):
         return self.name
 
@@ -203,19 +198,19 @@ class News(models.Model):
     name_news = models.CharField(
         max_length= 255, 
         verbose_name='Название.'
-        )
+    )
     image_news = ResizedImageField(
         force_format="WEBP", 
         quality=100, 
         upload_to='news_image/', 
         verbose_name='Фотография'
-        )
+    )
     description_news = models.TextField(
         verbose_name='Описание'
-        )
+    )
     created_news = models.DateTimeField(
         auto_now_add=True
-        )
+    )
 
     def __str__(self):
         return self.name_news
