@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from apps.settings.models import Settings,Slide,Data,Certificate,About,Lessons,Makal,Pride,News,Contact
+from apps.settings.models import Settings,Contact,About,Slide,Data,Certificate,Lessons,Makal,Pride,News
 from django.core.mail import send_mail
 
 # Create your views here.

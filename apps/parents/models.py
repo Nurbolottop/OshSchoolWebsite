@@ -86,12 +86,11 @@ class Teacher(models.Model):
         verbose_name_plural = "Мугалимдер"
         ordering = ('id', )
         
-# Create your models here.
 class AchykSaat(models.Model):
     name = models.CharField(
         max_length=255, 
         verbose_name='Аты'
-        )
+    )
 
     def __str__(self):
         return self.name
@@ -111,11 +110,11 @@ class AchykSaatDetail(models.Model):
     achyksaat = models.FileField(
         upload_to='achyksaat/', 
         verbose_name='Документ файл'
-        )
+    )
     name = models.CharField(
         max_length=255, 
         verbose_name='Аты'
-        )
+    )
 
     def __str__(self):
         return self.name

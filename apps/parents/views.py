@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from apps.parents.models import Parents,Parlament,Student,Teacher,AchykSaat
 from apps.settings.models import Settings
+from apps.parents.models import AchykSaat,Parents,Parlament,Student,Teacher
 
 # Create your views here.
 def parents(request):
