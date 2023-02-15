@@ -7,5 +7,5 @@ urlpatterns = [
     path("students/", students, name= "students"),
     path("teacher/", teacher, name= "teacher"),
     path("achyksaat/", achyksaat, name= "achyksaat"),
-    path("achyksaat_detail/", achyksaat_detail, name= "achyksaat_detail"),
+    path("achyksaat_detail/<int:id>/", achyksaat_detail, name= "achyksaat_detail"),
 ]

@@ -1,4 +1,5 @@
 from django.db import models
+from django_resized.forms import ResizedImageField
 
 # Create your models here.
 class Settings(models.Model):
@@ -6,7 +7,9 @@ class Settings(models.Model):
         max_length=244,
         verbose_name='Сайттын аты!'
     )
-    logo_site = models.ImageField(
+    logo_site = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='logo_site/',
         verbose_name='Мектептин логотиби'
     )
@@ -55,11 +58,15 @@ class Settings(models.Model):
         verbose_name_plural = "Настройка"
 
 class Slide(models.Model):
-    first_slide = models.ImageField(
+    first_slide = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="slide_site/",
         verbose_name='Биринчи слайд'
     )
-    second_slide = models.ImageField(
+    second_slide = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='slide_site/',
         verbose_name='Второй слайд'
     )
@@ -102,18 +109,21 @@ class Data(models.Model):
         ordering = ('id', )
 
 class Certificate(models.Model):
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to=255,
         verbose_name='Сурот'
     )
-
     class Meta:
         verbose_name = 'Сертификаттар'
         verbose_name_plural = 'Сертификаттар'
         ordering = ('id', )
         
 class About(models.Model):
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="About_image", 
         verbose_name="Сурот"
     )
@@ -168,7 +178,9 @@ class Makal(models.Model):
         ordering = ('id', )
         
 class Pride(models.Model):
-    image_pride = models.ImageField(
+    image_pride = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='image_pride/',
         verbose_name="Суроту!"
     )
@@ -179,7 +191,6 @@ class Pride(models.Model):
     description_pride = models.TextField(
         verbose_name='Кошумча маалымат!'
     )
-
     def __str__(self):
         return self.name_pride
 
@@ -193,7 +204,9 @@ class News(models.Model):
         max_length= 255, 
         verbose_name='Название.'
         )
-    image_news = models.ImageField(
+    image_news = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='news_image/', 
         verbose_name='Фотография'
         )

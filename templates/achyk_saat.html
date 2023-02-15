@@ -32,7 +32,7 @@
             
 
             {%for achyksaat in achyksaat%}
-            <div class = 'adi_block'><span style="height: 182px;"><a href="{% url 'achyk_detail' achyksaat.id %}" data-toggle="_modal" data-number="0">{{achyksaat.name}}</a></span></div>
+            <div class = 'adi_block'><span style="height: 182px;"><a href="{% url 'achyksaat_detail' achyksaat.id %}" data-toggle="_modal" data-number="0">{{achyksaat.name}}</a></span></div>
             {% endfor %}
         </div>
        

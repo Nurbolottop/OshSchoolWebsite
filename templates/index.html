@@ -110,7 +110,7 @@
 <!-- End of Funfact Area -->
 {% endif %}
 
-{% if gallery %}
+{% if certificate %}
 <!-- Gallery Area Start -->
 <div class="gallery-area section bg-white pt-120 pb-0">
     <div class="container">
@@ -122,7 +122,7 @@
     <!-- Portfolio Wrapper -->
     <div class="container-fluid">
         <div class="row">
-            {%for image in certificate%}
+            {% for image in certificate %}
             <a href="{{image.image.url}}" class="gallery-item image-popup col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12"><img src="{{image.image.url}}" alt="Image"></a>
             <!-- Gallery Item -->
             {%endfor%}
@@ -240,7 +240,7 @@
                         <div class="news-meta fix">
                             <span><i class="zmdi zmdi-calendar-check"></i>{{news.created_news}}</span>
                        </div>
-                       <p>{{news.description_news}}</p>
+                       <p>{{news.description_news|truncatewords:5}}</p>
                        <a href="{%url 'news_detail' news.id%}">Улантып окуу</a>
                     </div>
                 </div>

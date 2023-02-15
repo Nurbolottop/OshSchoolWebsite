@@ -1,4 +1,5 @@
 from django.db import models
+from django_resized.forms import ResizedImageField
 
 # Create your models here.
 class Parents(models.Model):
@@ -24,7 +25,9 @@ class Parlament(models.Model):
         max_length=255,
         verbose_name='Окуучунун  аты.'
     )
-    image_teacher = models.ImageField(
+    image_teacher = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='teacher_image/',
         verbose_name='Окуучунун суроту'
     )
@@ -45,7 +48,9 @@ class Student(models.Model):
         max_length=255,
         verbose_name='Класстын аты.'
     )
-    image_student = models.ImageField(
+    image_student = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='student_image/',
         verbose_name='Класстын суроту'
     )
@@ -63,7 +68,9 @@ class Teacher(models.Model):
         max_length=255,
         verbose_name='Мугалимдин аты.'
     )
-    image_teacher = models.ImageField(
+    image_teacher = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='teacher_image/',
         verbose_name='Мугалимдин суроту'
     )
