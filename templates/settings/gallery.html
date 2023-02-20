@@ -22,17 +22,16 @@
     </div>
 </div>
 <!-- End of Page Banner Area -->
-<div class="news-area bg-white section pt-120 pb-120">
+<div class="gallery-area section bg-white pt-120 pb-120">
     <div class="container">
-        <!-- Section Title -->
         <div class="row">
-            
+            <!-- Gallery Item -->
+            {%for gallery in gallery%}
 
-                {%for gallery in gallery%}
-                <div class = 'adi_block'><span style="height: 182px;"><a href="{% url 'gallery_detail' gallery.id %}" data-toggle="_modal" data-number="0">{{gallery.name}}</a></span></div>
-                {% endfor %}
+            <a href="{{gallery.gallery_image.url}}" class="gallery-item image-popup col-xl-3 col-lg-4 col-sm-6 col-12"><img src="{{gallery.gallery_image.url}}" alt="Image"></a>
+            <!-- Gallery Item -->
+            {%endfor%}
         </div>
-       
     </div>
 </div>
 <!-- Gallery Area Start -->
