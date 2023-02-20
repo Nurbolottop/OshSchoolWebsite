@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from apps.settings.models import Settings,Contact,About,Slide,Data,Certificate,Lessons,Makal,Pride,News
+from apps.settings.models import Settings,Contact,About,Slide,Data,Certificate,Lessons,Makal,Pride,News, Gallery
 from django.core.mail import send_mail
 
 # Create your views here.
@@ -82,3 +82,21 @@ def contact(request):
         'setting':setting,
     }
     return render(request, 'settings/contact.html', context)
+
+def gallery(request):
+    setting = Settings.objects.latest('id')
+    gallery = Gallery.objects.all()
+    context = {
+        'setting':setting,
+        'gallery': gallery
+    }
+    return render(request, 'settings/gallery.html', context)
+
+def gallery_detail(request,id):
+    gallery = Gallery.objects.get(id =id)
+    setting = Settings.objects.latest('id')
+    context = {
+        'setting':setting,
+        'gallery':gallery,
+    }
+    return render(request, 'settings/gallery_detail.html',context)
