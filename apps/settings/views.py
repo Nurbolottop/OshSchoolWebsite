@@ -92,11 +92,3 @@ def gallery(request):
     }
     return render(request, 'settings/gallery.html', context)
 
-def gallery_detail(request,id):
-    gallery = Gallery.objects.get(id =id)
-    setting = Settings.objects.latest('id')
-    context = {
-        'setting':setting,
-        'gallery':gallery,
-    }
-    return render(request, 'settings/gallery_detail.html',context)
